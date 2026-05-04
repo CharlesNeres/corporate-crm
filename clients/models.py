@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models import TextField
-
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Client(models.Model):
@@ -9,6 +9,8 @@ class Client(models.Model):
         ("inactive", "Inactive"),
         ("lead", "Lead"),
     ]
+
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
@@ -34,6 +36,8 @@ class Task(models.Model):
         ('in_progress', 'In progress'),
         ('done', 'Done'),
     ]
+
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='tasks')
     title = models.CharField(max_length=150)
