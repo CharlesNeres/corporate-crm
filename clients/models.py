@@ -20,3 +20,28 @@ class Client(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Task(models.Model):
+    PRIORITY_CHOICES = [
+        ('low', 'Low'),
+        ('medium', 'Medium'),
+        ('high', 'High'),
+    ]
+
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('in_progress', 'In progress'),
+        ('done', 'Done'),
+    ]
+
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='tasks')
+    title = models.CharField(max_length=150)
+    description = models.TextField(blank=True)
+    priority = models.CharField(max_length=20, choices=PRIORITY_CHOICES, default='medium')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
+    due_date = models.DateField(null=True, blank=True)
+    created_at = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
