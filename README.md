@@ -54,7 +54,7 @@ A production-ready REST API for managing clients and tasks with authentication, 
 ## ⚙️ How to Run
 
 ```bash
-git clone https://github.com/SEU_USUARIO/corporate-crm.git
+git clone https://github.com/CharlesNeres/corporate-crm.git
 cd corporate-crm
 
 python -m venv venv
@@ -73,7 +73,9 @@ python manage.py runserver
 1. Go to `/api/token/`
 2. Send your username and password
 3. Copy the access token
-4. Use it in headers:
+4. Use it in headers: 
+
+Authorization: Bearer YOUR_TOKEN
 
 ## 📚 API Documentation
 
