@@ -1,8 +1,12 @@
+## 📸 API Preview
+
+![Swagger UI](./docs/swagger.png)
+
+## 📌 Overview
+
 # Corporate CRM API
 
-A full-stack backend system built with Django and Django REST Framework to manage clients and tasks in a corporate environment.
-
-This project includes authentication, permissions, filtering, and API documentation using Swagger.
+A production-ready REST API for managing clients and tasks with authentication, filtering, and documentation.
 
 ---
 
@@ -12,7 +16,7 @@ This project includes authentication, permissions, filtering, and API documentat
 - Django
 - Django REST Framework (DRF)
 - JWT Authentication
-- SQLite (dev)
+- SQLite (development database)
 - drf-spectacular (Swagger/OpenAPI)
 
 ---
@@ -37,6 +41,9 @@ This project includes authentication, permissions, filtering, and API documentat
 - GET `/api/clients/`
 - POST `/api/clients/`
 - GET `/api/clients/{id}/`
+- DELETE `/api/clients/{id}/`
+- PUT `/api/clients/{id}/`
+- PATCH `/api/clients/{id}/`
 
 ### Tasks
 - GET `/api/tasks/`
