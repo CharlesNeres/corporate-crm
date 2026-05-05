@@ -68,6 +68,20 @@ python manage.py runserver
 
 ---
 
+## ⚙️ Environment Variables
+
+- Create a .env file in the root directory and add:
+```bash 
+SECRET_KEY=your_secret_key_here
+DEBUG=True
+ALLOWED_HOSTS=127.0.0.1,localhost
+ ```
+
+- Generate a secret key with:
+```bash 
+python -c "import secrets; print(secrets.token_urlsafe(50))"
+ ```
+
 ## 🔐 Authentication
 
 1. Go to `/api/token/`
